@@ -1,0 +1,5 @@
+#jupyter notebook folder
+.ipynb_checkpoints/
+
+# python cache folder
+__pycache__/
