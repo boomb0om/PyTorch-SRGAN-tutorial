@@ -1,9 +1,15 @@
 # A PyTorch SRGAN tutorial (Russian)
 
 Этот репозиторий является руководством по обучению и использованию модели SRGAN (Super Resolution GAN). 
-
 *Предполагается, что у читателя имеются базовые знания о нейросетях!*
 
+## Содержание
+Туториал состоит из 4 основных частей:
+
+- [Описание задачи и сети SRGAN](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B5-sisr-%D0%B8-srgan)
+- Подготовка датасета
+- Обучение моделей
+- Запуск SRGAN и проверка качества ее работы
 
 ## О задаче SISR и SRGAN
 
@@ -39,3 +45,20 @@ SRGAN (Super Resolution GAN) - подход к решению задачи SISR,
 
 Архитектуры генератора и дискриминатора на рисунке:
 ![SRGAN structure](images/srgan_architecture.png)
+
+## Подготовка датасета
+
+Обучение нейронной сети будет проходить на парах изображений LR-HR. Однако не обязательно заранее подготавливать LR и HR изображения вместе, достаточно подготовить только High Resolution фотографии, а Low Resolution изображения мы сможем получить из HR изображений прямо во время обучения.
+
+Этот этап описан и реализован в ноутбуке [1_create_dataset.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/1_create_dataset.ipynb)
+
+Некоторые датасеты, которые я рекомендую использовать:
+
+1. DIV2K - https://data.vision.ee.ethz.ch/cvl/DIV2K/
+2. COCO dataset - http://images.cocodataset.org/zips/train2014.zip, http://images.cocodataset.org/zips/test2014.zip
+3. FLICKR2k - https://drive.google.com/drive/folders/1AAI2a2BmafbeVExLH-l0aZgvPgJCk5Xm
+4. FFHQ - https://github.com/NVlabs/ffhq-dataset
+
+## Обучение моделей
+
+## Запуск модели
