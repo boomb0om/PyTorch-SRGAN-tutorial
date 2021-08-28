@@ -7,9 +7,9 @@
 Туториал состоит из 4 основных частей:
 
 - [Описание задачи и сети SRGAN](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B5-sisr-%D0%B8-srgan)
-- Подготовка датасета
-- Обучение моделей
-- Запуск SRGAN и проверка качества ее работы
+- [Подготовка датасета](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0)
+- [Обучение](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0)
+- [Запуск SRGAN и проверка качества ее работы](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0)
 
 ## О задаче SISR и SRGAN
 
@@ -50,7 +50,7 @@ SRGAN (Super Resolution GAN) - подход к решению задачи SISR,
 
 Обучение нейронной сети будет производится на парах изображений LR-HR. Однако не обязательно заранее подготавливать LR и HR пары изображений вместе, достаточно подготовить только High Resolution фотографии. Low Resolution изображения мы сможем получить из HR изображений, уменьшив их билинейной/бикубической интерполяцией прямо во время обучения.
 
-Этот этап описан и реализован в ноутбуке [1_create_dataset.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/1_create_dataset.ipynb)
+Этап подготовки данных описан и реализован в ноутбуке [1_create_dataset.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/1_create_dataset.ipynb)
 
 Датасеты, которые я рекомендую использовать:
 
@@ -58,6 +58,14 @@ SRGAN (Super Resolution GAN) - подход к решению задачи SISR,
 3. FLICKR2k - https://drive.google.com/drive/folders/1AAI2a2BmafbeVExLH-l0aZgvPgJCk5Xm
 4. FFHQ - https://github.com/NVlabs/ffhq-dataset
 
-## Обучение модели
+## Обучение
+
+Обучение модели разделяют на два этапа:  сначала на обычной MSE обучают генератор и получают сеть, которую называют SRResNet. Затем обучают SRGAN, проинициализованный весами SRResNet. Такое разделение необходимо, чтобы генератор не выдавал шум на начальных стадиях обучения и дискриминатор не начинал сразу выигрывать. Это позволяет избежать попадания в нежелательный локальный минимум при обучении SRGAN.
+
+Код для обучения SRResNet вы можете найти в ноутбуке: [2_train_srresnet.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/2_train_srresnet.ipynb)
+
+Обучение SRGAN реализовано в ноутбуке: [3_train_srgan.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/3_train_srgan.ipynb)
+
+В процессе обучения SRGAN я использовал функцию потерь, немного отличающуюся от функции потерь, описанной в [оригинальной статье](https://arxiv.org/pdf/1609.04802.pdf). 
 
 ## Запуск модели
