@@ -8,8 +8,8 @@
 
 - [Описание задачи и сети SRGAN](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B5-sisr-%D0%B8-srgan)
 - [Подготовка датасета](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0)
-- [Обучение](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0)
-- [Запуск SRGAN и проверка качества ее работы](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0)
+- [Обучение](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5)
+- [Запуск SRGAN и проверка качества ее работы](https://github.com/boomb0om/PyTorch-SRGAN-tutorial#%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8)
 
 ## О задаче SISR и SRGAN
 
