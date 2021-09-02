@@ -55,7 +55,7 @@ SRGAN (Super Resolution GAN) - подход к решению задачи SISR,
 Датасеты, которые я рекомендую использовать:
 
 1. DIV2K - https://data.vision.ee.ethz.ch/cvl/DIV2K/
-3. FLICKR2k - https://drive.google.com/drive/folders/1AAI2a2BmafbeVExLH-l0aZgvPgJCk5Xm
+3. Flickr2k - https://drive.google.com/drive/folders/1AAI2a2BmafbeVExLH-l0aZgvPgJCk5Xm
 4. FFHQ - https://github.com/NVlabs/ffhq-dataset
 
 ## Обучение
@@ -66,6 +66,14 @@ SRGAN (Super Resolution GAN) - подход к решению задачи SISR,
 
 Обучение SRGAN реализовано в ноутбуке: [3_train_srgan.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/3_train_srgan.ipynb)
 
-В процессе обучения SRGAN я использовал функцию потерь, немного отличающуюся от функции потерь, описанной в [оригинальной статье](https://arxiv.org/pdf/1609.04802.pdf). 
-
 ## Запуск модели
+
+![Сравнение методов апскейла](C:\Users\igore\Desktop\sberwork\PyTorch-SRGAN-tutorial\images\compare_srgan.png)
+
+Теперь давайте протестируем модель. Веса SRGAN и SRResNet, обученные на датасетах DIV2k и Flickr2k, можно найти здесь: [weights/pretrained/](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/tree/main/weights/pretrained)
+
+Соответствующий ноутбук: [4_evaluate_model.ipynb](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/4_evaluate_model.ipynb)
+
+К сожалению, такая модель не будет хорошо работать на многих изображениях из-за различных шумов. Например, она будет давать плохой результат на фотографиях с расширениями jpg/jpeg. Формат jpeg использует алгоритмы сжатия изображений, поэтому, чтобы модель хорошо работала и на них, нужно ее обучить убирать артефакты сжатия. Есть и другие шумы, которые нужно удалять в процессе увеличения качества изображения, но пожалуй более подробно расскажу об этом в следующем гайде) 
+
+Если нужна более совершенная модель, которая будет убирать артефакты и повышать качество изображений, то советую заглянуть в [этот репозиторий (Real-ESRGAN)](https://github.com/xinntao/Real-ESRGAN).
