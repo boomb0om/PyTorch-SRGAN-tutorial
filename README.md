@@ -68,7 +68,7 @@ SRGAN (Super Resolution GAN) - подход к решению задачи SISR,
 
 ## Запуск модели
 
-![Сравнение методов апскейла](C:\Users\igore\Desktop\sberwork\PyTorch-SRGAN-tutorial\images\compare_srgan.png)
+![Сравнение методов апскейла](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/blob/main/images/compare_srgan.png?raw=true)
 
 Теперь давайте протестируем модель. Веса SRGAN и SRResNet, обученные на датасетах DIV2k и Flickr2k, можно найти здесь: [weights/pretrained/](https://github.com/boomb0om/PyTorch-SRGAN-tutorial/tree/main/weights/pretrained)
 
